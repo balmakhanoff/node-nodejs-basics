@@ -24,11 +24,11 @@ const getSystemInfo = async () => {
     console.log(`Path segment separator is "${path.sep}"`);
     console.log(`Path to current file is ${__filename}`);
     console.log(`Path to current directory is ${__dirname}`);
-    console.log(unknownObject);
 }
 
 const unknownObject = await loadJson();
 await getSystemInfo();
+console.log(unknownObject);
 
 const myServer = createServerHttp((_, res) => {
     res.end('Request accepted');
