@@ -16,11 +16,14 @@ const calculateHash = async () => {
             const finashHash = hash.digest('hex');
             console.log(`SHA256 hash: ${finashHash}`);
         })
-    } catch (err) {
+
         stream.on('error', (err) => {
             console.error('Error reading file:', err);
             throw err;
         })
+
+    } catch (err) {
+        console.error('Unexpected error:', err);
     }
 };
 
