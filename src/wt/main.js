@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const performCalculations = async () => {
-    const numbers = [10, 11, 12, 13];
+    const numbers = [10, 11, 12, 13, 14, 15, 16, 17];
 
     const results = await Promise.all(numbers.map((n) => {
         return new Promise((resolve) => {
