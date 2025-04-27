@@ -1,5 +1,14 @@
+import {createWriteStream} from 'fs';
+import {pipeline} from 'stream/promises';
+
+
 const write = async () => {
-    // Write your code here 
+    // Write your code here
+    const filePath = 'files/fileToWrite.txt';
+    const writeStream = await createWriteStream(filePath, 'utf-8');
+
+    await pipeline(process.stdin, writeStream);
 };
 
-await write();
+// ctr + c прерывает выполнение программы
+await write().catch(console.error);
